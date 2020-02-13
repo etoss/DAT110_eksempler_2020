@@ -1,0 +1,5 @@
+23
+DAT110 Grunnleggende Programmering
+MAT100 matematiske metoder 1
+ING100 Ingeniørfaglig innføringsemne
+45

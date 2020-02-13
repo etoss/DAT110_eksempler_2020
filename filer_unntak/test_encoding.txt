@@ -1,0 +1,6 @@
+Tester encoding
+æøå ÆØÅ
+dfgdfgdfasg
+sdfhsdfhsfh
+fsghfsdh
+sdfghsdfhsh

@@ -1,0 +1,15 @@
+﻿DAT110 øving 4: Samlingsobjekter
+Læringsmål
+Du skal lære hvordan du bruker samlingsobjektene lister, mengder og dictionaries. 
+Oppgaver
+a) Lister: Idé til oppgavetype:
+a. Lag en funksjon som regner ut en verdi basert på en annen verdi
+b. Lag en funksjon som tar inn ei liste med tall og returnerer ei ny liste. Den nye lista skal være like lang som den opprinnelige lista, og skal inneholde resultatet fra funksjonen i oppgave a) kalt på tallet på samme index i den første lista
+c. Lag et liste med tallene fra 0 til 10, bruk funksjonen fra oppgave b) på lista, og bruk matplotlib for å tegne ut kurven.
+d. Frivillig, avansert: Man kan sende navn til funksjoner som parametere, og kalle disse funksjonene gjennom parameterne. Bruk dette til å gjøre om funksjonen i oppgave b) slik at den kan brukes til å beregne funksjoner på alle verdiene i ei liste.
+e. Enklere oppgave: Lag en numpy array med alle tall fra 0 til 10. Lag en annen nympy array med den første arrayen (opphøyd i to eller en annen funksjon som fins på nympy arrays). Tegn opp resultatet med matplotlib.
+b) Mengder: To tekstfiler som inneholder navn er lagt ved øvingen. Programmet ditt skal finne ut hvilke navn som fins i begge filene. Dette kan du gjøre ved å lese inn navnene i de to filene i hver sin mengde og så kalle intersection metoden på dem for å finne de som er med i begge. 
+c) Dictionaries: Lag et program som teller antall forekomster av hvert ord i en tekstfil. Brukeren skal skrive inn navnet til tekstfila og programmet skal skrive ut antall forekomster av hvert ord i tekstfila. Du kan gjøre dette ved å lage et dictionary som bruker ord som indeks og antall som verdi, og øke verdien til ordet med én for hver gang du leser ordet.
+d) Frivillig: Skriv om programmet fra oppgave c) slik at du får ut ordene alfabetisk.
+e) Frivillig: Skriv om programmet fra oppgave c) slik at du får ut ordene sortert etter antall forekomster, med ordet som forekommer flest ganger først.
+

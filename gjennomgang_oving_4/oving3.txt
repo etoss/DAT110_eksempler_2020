@@ -1,0 +1,21 @@
+﻿DAT110 øving 3: Filer og Exceptions
+Læringsmål
+Du skal lære hvordan du bruker filer. Du skal lære hvordan å håndtere unntak (exceptions).
+Oppgaver
+a) Skriv om programmet fra øving 1 oppgave c slik at det bruker exception håndtering til å håndtere at brukeren skriver inn en vekt som ikke er et lovlig flyttall. Skriv gjerne en funksjon som leser inn vekta, håndterer feil brukerinput, og returnerer vekta som et flyttall.
+b) Å lese gjennom tekstfiler for å trekke ut informasjon er en vanlig oppgave innen databehandling. Du skal skrive et program som leser gjennom ei fil som inneholder en mengde flyttall (vindmålinger fra en værstasjon på taket av UiS). Denne fila er lagt ved oppgaven. Programmet ditt skal:
+a. Lese inn hver linje i fila og konvertere den til et flyttall
+b. Telle antall flyttall den leser inn
+c. Finne maksimum og minimum av flyttallene den leser inn
+d. Finne gjennomsnitt av flyttallene den leser inn
+e. Skrive antall, gjennomsnitt, høyeste og laveste verdi til en ny tekstfil med formatet oppgitt under
+c) Håndter alle unntak (exceptions) som kan oppstå under filoperasjonene i oppgave b), samt sørg for at filene alltid blir lukket, selv om det oppstår et unntak.
+d) Frivillig: Som oppgave b) bortsett fra at du skal bruke en annen tekstfil. Denne tekstfila inneholder ikke bare tall. Hver linje er på formatet dato;tidspunkt;tall. Du skal skrive ut samme informasjon som for oppgave b) for hver dato. Før antall, gjennomsnitt osv. skal du skrive ut «Dato: « og så datoen. Bruk string.split(«;») metoden for å splitte en streng i tre på semikolon.
+e) Frivillig: Fila fra oppgave d) inneholder noen feiloppføringer. Disse har verdier som langt overstiger en normal vindstyrke. Filtrer ut vindstyrker som er over 100.
+Formatet
+Her er formatet til tekstfila som programmet skal skrive ut i oppgave b, del e. Tallene her er eksempler, ditt program vil nok lage andre tall.
+Antall: 456
+Gjennomsnitt: 5.23
+Maksimum: 34.45
+Minimum: 0.5
+

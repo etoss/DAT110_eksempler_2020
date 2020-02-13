@@ -1,0 +1,5 @@
+Viser hva som skjer
+hvis jeg kjører på nytt
+overskriver fila
+tester append
+skal legge til uten å slette gammelt innhold
