@@ -1,0 +1,46 @@
+Versjonskontrollsystemer (Version control systems)
+
+Motivasjon 1: Folk som jobber på samme fil skriver over det den andre har gjort
+Motivasjon 1.5: Ha en "master" versjon som virker og som er synlig eksternt, og en
+  eller flere utviklingsversjoner som man jobber på.
+
+Motivasjon 2: Ha en sikkerhetskopi (backup) av det du har gjort, kan tilbakestille ved behov
+
+Ulike systemer, sortert på alder
+CVS
+Subversion
+Git
+
+Typisk arbeidsprosess
+- Lag en branch
+- Laster ned filene
+- Mens man jobber med filene:
+  - Jobber med dem
+  - Sjekker filene inn
+- Sender eventuelle oppdateringer til andre
+- Når ting er gjennomtestet, flett sammen med master til ny master
+
+Git - start et prosjekt
+- naviger i kommandolinja til der prosjektet ligger
+- git init <navn på mappe>
+- git add <navn på fil> eller <navn på mappe>. Å legge til ei mappe legger til alle filene i mappa
+- git commit -m "melding" for å sjekke inn filene lokalt
+
+Git - lag en branch
+- git branch <navn på branch> Lager en ny branch
+- git checkout <navn på branch>
+- gjør endringene dine
+- git add for å legge til nye filer
+- git commit -m melding
+- git push --set-upstream origin <navn på branch>
+
+
+Github - en on-line tjeneste for å lagre Git repo-er (Repository)
+
+Lag Github repo fra lokale filer
+- git remote add origin https://github.com/<din bruker>/<navn på repo>
+- git push --set-upstream origin master
+
+Last ned fra Github
+- git clone https://github.com/<bruker>/<navn på repo>
+  o Eksempel: https://github.com/etoss/DAT110_eksempler_2020.git
