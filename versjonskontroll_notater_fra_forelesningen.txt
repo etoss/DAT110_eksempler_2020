@@ -28,7 +28,7 @@ Git - start et prosjekt
 
 Git - lag en branch
 - git branch <navn på branch> Lager en ny branch
-- git checkout <navn på branch>
+- git checkout <navn på branch> Bytter til den nye branchen
 - gjør endringene dine
 - git add for å legge til nye filer
 - git commit -m melding

@@ -23,7 +23,7 @@ class Spiller:
         return self.kort.verdi
 
 
-# Kortspill
+# Enkelt Kortspill
 class Kortspill:
     def __init__(self):
         self.kortstokk = Kortstokk()

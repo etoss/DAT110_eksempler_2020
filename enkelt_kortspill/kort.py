@@ -11,12 +11,14 @@ class Kort:
         self.korttype = korttype
         self.verdi = verdi
 
+    # Sjekker om kortet har samme type (hjerter, spar, ruter eller kløver)
     def har_samme_type(self, kortet):
         if self.korttype == kortet.korttype:
             return True
         else:
             return False
 
+    # Sjekker om kortene har samme verdi.
     def har_samme_verdi(self, kortet):
         return self.verdi == kortet.verdi
 
