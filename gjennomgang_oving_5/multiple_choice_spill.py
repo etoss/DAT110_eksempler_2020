@@ -1,8 +1,12 @@
 class Sporsmaal:
+    neste_id = 1
+
     def __init__(self, sporsmaal, svaralternativene, korrekt_svar=0):
         self.__sporsmaal = sporsmaal
         self.__svaralternativene = svaralternativene
         self.__korrekt_svar = korrekt_svar
+        self.__id = Sporsmaal.neste_id
+        Sporsmaal.neste_id += 1
 
     @property
     def sporsmaal(self):
@@ -15,6 +19,10 @@ class Sporsmaal:
     @property
     def korrekt_svar(self):
         return self.__korrekt_svar
+
+    @property
+    def id(self):
+        return self.__id
 
     def sjekk_riktig_svar(self, svaret):
         if svaret == self.korrekt_svar:

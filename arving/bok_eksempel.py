@@ -32,7 +32,7 @@ class Bok:
 class Fagbok(Bok):
     # Egen konstruktør, overstyrer (override) konstruktøren til Bok
     def __init__(self, ISBN, tittel, forfattere, utgivelsesaar, fagfelt, utgave):
-        # Kaller suoerklassen (Bok) sin konstruktør. Dette må alltid gjøres først!
+        # Kaller superklassen (Bok) sin konstruktør. Dette må alltid gjøres først!
         super().__init__(ISBN, tittel, forfattere, utgivelsesaar)
 
         # Lager egne egenskaper for fagbøker
@@ -48,7 +48,7 @@ class Fagbok(Bok):
 
 # Man kan fint ha flere subklasser av samme superklasse
 class Fiksjonsbok(Bok):
-    def __init__(self, ISBN, tittel, forfattere, utgivelsesaar, fagfelt, utgave, sjanger):
+    def __init__(self, ISBN, tittel, forfattere, utgivelsesaar, sjanger):
         super().__init__(ISBN, tittel, forfattere, utgivelsesaar)
         self.sjanger = sjanger
 
@@ -73,10 +73,21 @@ class Artikkelsamling(Fagbok):
         return resultat
 
 
+class ArtikkelsamlingMedTeller:
+    def __init__(self, ISBN, tittel, forfattere, utgivelsesaar, fagfelt, utgave):
+        super().__init__(ISBN, tittel, forfattere, utgivelsesaar, fagfelt, utgave)
+        self.teller = 0
+
+    def legg_til_artikkel(self, artikkel):
+        Artikkelsamling.legg_til_artikkel(self,artikkel)
+        self.teller += 1
+
 # Testekode
 if __name__ == "__main__":
     boka = Fagbok("1-292-22575-0", "Starting out with Python", ["Tony Gaddis"], 2019, "Programmering", 4)
     print(boka)
+    bok2 = Fiksjonsbok("3456-234-2", "Hobbiten", ["JRR Tolkien"], 1946, "Fantasy")
+    print(bok2)
     samlingen = Artikkelsamling("1234-453-2345", "Advanced Database Systems", ["Michael Stonebraker", "Tony Sellis"], 2014, "Databaser", 2)
     samlingen.legg_til_artikkel("Test1")
     samlingen.legg_til_artikler(["Test2", "En artikkel", "Navn"])
