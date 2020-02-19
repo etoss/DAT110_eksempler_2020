@@ -1,35 +1,43 @@
+# Oppgave a)
 class Sporsmaal:
-    neste_id = 1
+    neste_id = 1        # Oppgave g), klasse-variabel
 
+    # Oppgave a) og b)
     def __init__(self, sporsmaal, svaralternativene, korrekt_svar=0):
         self.__sporsmaal = sporsmaal
         self.__svaralternativene = svaralternativene
         self.__korrekt_svar = korrekt_svar
-        self.__id = Sporsmaal.neste_id
-        Sporsmaal.neste_id += 1
+        self.__id = Sporsmaal.neste_id      # Oppgave g)
+        Sporsmaal.neste_id += 1             # Oppgave g)
 
+    # Oppgave h)
     @property
     def sporsmaal(self):
         return self.__sporsmaal
 
+    # Oppgave h)
     @property
     def svaralternativene(self):
         return self.__svaralternativene
 
+    # Oppgave h)
     @property
     def korrekt_svar(self):
         return self.__korrekt_svar
 
+    # Oppgave g)
     @property
     def id(self):
         return self.__id
 
+    # Oppgave c)
     def sjekk_riktig_svar(self, svaret):
         if svaret == self.korrekt_svar:
             return True
         else:
             return False
 
+    # Oppgave d)
     def __str__(self):
         resultat = "Spørsmål:\n"
         resultat += self.sporsmaal + "\n"
@@ -37,6 +45,8 @@ class Sporsmaal:
             resultat += f"{nummer}: {svar}\n"
         return resultat
 
+
+# Oppgave e)
 def lag_sporsmaal():
     sporsmaalene = []
     sporsmaalene.append(Sporsmaal("Hvilken løkkestruktur bruker man for å kjøre en blokk et oppgitt antall ganger?",
@@ -52,6 +62,7 @@ def lag_sporsmaal():
     return sporsmaalene
 
 
+# Oppgave f)
 if __name__ == "__main__":
     sporsmaalene = lag_sporsmaal()
     korrekte_svar = 0
@@ -65,4 +76,3 @@ if __name__ == "__main__":
         else:
             print("Feil!")
     print(f"Ferdig. Du fikk {korrekte_svar} riktige av {len(sporsmaalene)} mulige.")
-
