@@ -73,6 +73,11 @@ class Artikkelsamling(Fagbok):
         return resultat
 
 
+# Artikkelsamling med teller, eksempel på "fragile base class" problemet.
+#
+# En endring i implementasjonen av legg_til_artikler metoden fra klassen
+# Artikkelsamling fører til at man også må endre denne metoden i
+# ArtikkelsamlingMedTeller.
 class ArtikkelsamlingMedTeller(Artikkelsamling):
     def __init__(self, ISBN, tittel, forfattere, utgivelsesaar, fagfelt, utgave):
         super().__init__(ISBN, tittel, forfattere, utgivelsesaar, fagfelt, utgave)
@@ -84,7 +89,7 @@ class ArtikkelsamlingMedTeller(Artikkelsamling):
 
     def legg_til_artikler(self, artikler):
         super().legg_til_artikler(artikler)
-#        self.teller += len(artikler)
+        self.teller += len(artikler)
 
 
 # Testekode

@@ -11,6 +11,8 @@ class FakultetTest(unittest.TestCase):
         self.assertEquals(fakultet(5), 120)
         self.assertEquals(fakultet(8), 40320)
 
+    # Bruk assertAlmostEqual for flyttall siden flyttallsmatematikk av og til er litt upresis på grunn av
+    # avrundingsfeil.
     def test_volum_rom(self):
         self.assertEquals(volum_rom(2, 3, 4), 24)
         self.assertAlmostEquals(volum_rom(2.5, 3.4, 4.3), 36.55, places=6)
