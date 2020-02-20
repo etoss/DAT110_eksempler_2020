@@ -64,7 +64,7 @@ class Artikkelsamling(Fagbok):
 
     def legg_til_artikler(self, artikler):
         for artikkel in artikler:
-            self.artikler.append(artikkel)
+            self.legg_til_artikkel(artikkel)
 
     def artikkelliste_streng(self):
         resultat = ""
@@ -73,14 +73,19 @@ class Artikkelsamling(Fagbok):
         return resultat
 
 
-class ArtikkelsamlingMedTeller:
+class ArtikkelsamlingMedTeller(Artikkelsamling):
     def __init__(self, ISBN, tittel, forfattere, utgivelsesaar, fagfelt, utgave):
         super().__init__(ISBN, tittel, forfattere, utgivelsesaar, fagfelt, utgave)
         self.teller = 0
 
     def legg_til_artikkel(self, artikkel):
-        Artikkelsamling.legg_til_artikkel(self,artikkel)
+        super().legg_til_artikkel(artikkel)
         self.teller += 1
+
+    def legg_til_artikler(self, artikler):
+        super().legg_til_artikler(artikler)
+#        self.teller += len(artikler)
+
 
 # Testekode
 if __name__ == "__main__":
@@ -88,7 +93,8 @@ if __name__ == "__main__":
     print(boka)
     bok2 = Fiksjonsbok("3456-234-2", "Hobbiten", ["JRR Tolkien"], 1946, "Fantasy")
     print(bok2)
-    samlingen = Artikkelsamling("1234-453-2345", "Advanced Database Systems", ["Michael Stonebraker", "Tony Sellis"], 2014, "Databaser", 2)
+    samlingen = ArtikkelsamlingMedTeller("1234-453-2345", "Advanced Database Systems", ["Michael Stonebraker", "Tony Sellis"], 2014, "Databaser", 2)
     samlingen.legg_til_artikkel("Test1")
     samlingen.legg_til_artikler(["Test2", "En artikkel", "Navn"])
     print(samlingen.artikkelliste_streng())
+    print(samlingen.teller)
