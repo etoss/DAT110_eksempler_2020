@@ -51,6 +51,8 @@ class Punkt:
         return "Punkt: " + self.koordinatpar_streng()
 
     # Overstyrer likhets-operatoren for punkter. To punkter er like hvis koordinatene er like.
+    # Parametrene er de to objektene som blir sammenliknet. I sammenlikningen venstre == hoyre, så blir
+    # self lik venstre og other lik hoyre.
     def __eq__(self, other):
         if self.x == other.x and self.y == other.y:
             return True
