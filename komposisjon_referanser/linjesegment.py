@@ -25,6 +25,16 @@ class Linjesegment:
         self.start.flytt(delta_x, delta_y)
         self.slutt.flytt(delta_x, delta_y)
 
+    # Grunn kopi / shallow copy
+    def copy(self):
+        return Linjesegment(self.start, self.slutt)
+
+    # Djup kopi / deep copy
+    def deepcopy(self):
+        ny_start = self.start.copy()
+        ny_slutt = self.slutt.copy()
+        return Linjesegment(ny_start, ny_slutt)
+
 
 if __name__ == "__main__":
     punkt1 = Punkt(1, 1)
@@ -32,7 +42,7 @@ if __name__ == "__main__":
     linje1 = Linjesegment(punkt1, punkt2)
     print(linje1)
     punkt3 = Punkt(3, 9)
-    linje2 = Linjesegment(punkt2, punkt3)
+    linje2 = Linjesegment(punkt2.copy(), punkt3)
     print(linje2)
     print(linje1.lengde())
     print(linje2.lengde())
@@ -47,4 +57,12 @@ if __name__ == "__main__":
     # flyttet linje1. Når man bygger linjer må man tenke på om dette er oppførsel man ønsker eller ikke. Hvis
     # man ikke ønsker dette, må man lage et separat punktobjekt for starten til linje2.
     print(linje2)
+
+    print("Lager en kopi")
+    linje3 = linje1.deepcopy()
+    print(linje3)
+    print("Flytter linje 1")
+    linje1.flytt(2, 0)
+    print(linje1)
+    print(linje3)
 

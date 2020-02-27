@@ -53,6 +53,8 @@ class Punkt:
     # Overstyrer likhets-operatoren for punkter. To punkter er like hvis koordinatene er like.
     # Parametrene er de to objektene som blir sammenliknet. I sammenlikningen venstre == hoyre, så blir
     # self lik venstre og other lik hoyre.
+    #
+    # a == b blir oversatt til a.__eq__(b)
     def __eq__(self, other):
         if self.x == other.x and self.y == other.y:
             return True
@@ -64,12 +66,28 @@ class Punkt:
     def koordinatpar_streng(self):
         return "(" + str(self.x) + ", " + str(self.y) + ")"
 
+    # Kopierer et punkt-objekt
+    def copy(self):
+        return Punkt(self.x, self.y)
+
 
 def flytt_til_midten(punkt1, punkt2):
     midt_x = (punkt1.x + punkt2.x)/2
     midt_y = (punkt1.y + punkt2.y)/2
     punkt1.x = midt_x
     punkt1.y = midt_y
+
+
+class Punkt3D:
+    def __init__(self, x, y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def __eq__(self, other):
+        if self.x == other.x and self.y == other.y and self.z == other.z:
+            return True
+        return False
 
 
 if __name__ == "__main__":
@@ -94,3 +112,5 @@ if __name__ == "__main__":
     print(punkt1)
     punkt1.theta = math.pi*0.33
     print(punkt1)
+    punkt3 = Punkt3D(5, 6, 2)
+    print(punkt1 == punkt3) # punkt1.__eq__(punkt3)
